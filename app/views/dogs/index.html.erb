@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @owner.name %>
-</p>
-
-<h2>Dogs</h2>
+<h1>Dogs</h1>
 
 <table>
   <thead>
@@ -13,16 +8,18 @@
       <th>Name</th>
       <th>Colour</th>
       <th>Date of birth</th>
+      <th>Owner</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @owner.dogs.each do |dog| %>
+    <% @dogs.each do |dog| %>
       <tr>
         <td><%= dog.name %></td>
         <td><%= dog.colour %></td>
         <td><%= dog.date_of_birth %></td>
+        <td><%= dog.owner.name %></td>
         <td><%= link_to 'Show', [@owner, dog] %></td>
         <td><%= link_to 'Edit', edit_owner_dog_path(@owner, dog) %></td>
         <td><%= link_to 'Destroy', [@owner, dog], method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,8 +31,3 @@
 <br>
 
 <%= link_to 'New Dog', new_owner_dog_path(@owner) %>
-
-<br />
-
-<%= link_to 'Edit', edit_owner_path(@owner) %> |
-<%= link_to 'Back', owners_path %>
