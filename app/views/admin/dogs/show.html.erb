@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @dog.name %>
+</p>
+
+<p>
+  <strong>Colour:</strong>
+  <%= @dog.colour %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @dog.date_of_birth %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= link_to @dog.owner.name, @dog.owner %>
+</p>
+
+<%= link_to 'Back', admin_dogs_path %>

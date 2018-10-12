@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Dogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Colour</th>
+      <th>Date of birth</th>
+      <th>Owner</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dogs.each do |dog| %>
+      <tr>
+        <td><%= dog.name %></td>
+        <td><%= dog.colour %></td>
+        <td><%= dog.date_of_birth %></td>
+        <td><%= dog.owner.name %></td>
+        <td><%= link_to 'Show', [:admin, dog] %></td>
+        <td><%= link_to 'Destroy', [:admin, dog], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
